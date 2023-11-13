@@ -22,24 +22,26 @@ const CategoryContainer=styled.div`
 `
 const ArrowLeft = styled.div`
   display:flex;
+  align-items:center;
   position:sticky;
   height:30px;
   top:50%;
   left:25px;
   z-index:999;
-  background-color:green;
+  background-color:black;
   &:hover{
     cursor:pointer;
   }
 `
 const ArrowRight = styled.div`
   display:flex;
+  align-items:center;
   position:sticky;
   height:40px;
   top:50%;
   right:25px;
   z-index:999;
-  background-color:grey;
+  background-color:black;
   &:hover{
     cursor:pointer;
   }
@@ -55,6 +57,7 @@ const CategoryItems = styled.div`
   display: flex;
   position: relative;
   margin: 3px;
+  cursor:pointer;
 `
 
 const Img = styled.img`
@@ -112,58 +115,58 @@ const Categoryitem = () => {
   return (
     <CategoryContainer ref={categoryScroll}>
       <ArrowLeft onClick={()=>handleScroll("left")}>
-        <FontAwesomeIcon icon={faAngleLeft} style={{fontSize:`30px`,color:"black"}} />
+        <FontAwesomeIcon icon={faAngleLeft} style={{fontSize:`30px`,color:"white"}} />
       </ArrowLeft>
       <CategoryScrollContainer >
-      <CategoryItems>
-        <Img src='https://images.unsplash.com/photo-1604242692760-2f7b0c26856d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80' alt="fashion"></Img>
-        <Info>
-          <Title>watches</Title>
-          <Button onClick={handleCategory}>Shop now</Button>
-        </Info>
-      </CategoryItems>
-      <CategoryItems>
-        <Img src='https://images.unsplash.com/photo-1532453288672-3a27e9be9efd?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGNsb3RoZXMlMjBjYXRlZ29yaWVzfGVufDB8fDB8fHww' alt="fashion"></Img>
-        <Info>
-          <Title>Clothes</Title>
-          <Button onClick={handleCategory}>Shop now</Button>
-        </Info>
-      </CategoryItems>
-      <CategoryItems>
-        <Img src='https://images.unsplash.com/photo-1691096675075-de995918f3ce?auto=format&fit=crop&q=80&w=1964&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' alt="SkinCare"></Img>
-        <Info>
-          <Title>Skincare</Title>
-          <Button onClick={handleCategory}>Shop now</Button>
-        </Info>
-      </CategoryItems>
-      <CategoryItems>
-        <Img src='https://images.pexels.com/photos/7620697/pexels-photo-7620697.jpeg?auto=compress&cs=tinysrgb&w=600' alt="Electronics"></Img>
-        <Info>
-          <Title>Electronics</Title>
-          <Button onClick={handleCategory}>Shop now</Button>
-        </Info>
-      </CategoryItems>
-      <CategoryItems>
-        <Img src='https://images.pexels.com/photos/8105118/pexels-photo-8105118.jpeg?auto=compress&cs=tinysrgb&w=600' alt="jewellery"></Img>
-        <Info>
-          <Title>Jewellery</Title>
-          <Button onClick={handleCategory}>Shop now</Button>
-        </Info>
-      </CategoryItems>
-      <CategoryItems>
-        <Img src='https://images.pexels.com/photos/3167310/pexels-photo-3167310.jpeg?auto=compress&cs=tinysrgb&w=600' alt="groceries"></Img>
-        <Info>
-          <Title>Groceries</Title>
-          <Button onClick={handleCategory}>Shop now</Button>
-        </Info>
-      </CategoryItems>
-      <CategoryItems>
-        <Img src='https://images.pexels.com/photos/704241/pexels-photo-704241.jpeg?auto=compress&cs=tinysrgb&w=600' alt="sunglasses"></Img>
-        <Info>
-          <Title>sunglasses</Title>
-          <Button onClick={handleCategory}>Shop now</Button>
-        </Info>
-      </CategoryItems>
+        <CategoryItems>
+          <Img src='https://images.pexels.com/photos/190819/pexels-photo-190819.jpeg?auto=compress&cs=tinysrgb&w=600' alt="fashion"></Img>
+          <Info>
+            <Title>watches</Title>
+            <Button onClick={handleCategory}>Shop now</Button>
+          </Info>
+        </CategoryItems>
+        <CategoryItems>
+          <Img src='https://images.pexels.com/photos/1148957/pexels-photo-1148957.jpeg?auto=compress&cs=tinysrgb&w=600' alt="fashion"></Img>
+          <Info>
+            <Title>Clothes</Title>
+            <Button onClick={handleCategory}>Shop now</Button>
+          </Info>
+        </CategoryItems>
+        <CategoryItems>
+          <Img src='https://images.pexels.com/photos/3685538/pexels-photo-3685538.jpeg?auto=compress&cs=tinysrgb&w=600' alt="SkinCare"></Img>
+          <Info>
+            <Title>Skincare</Title>
+            <Button onClick={handleCategory}>Shop now</Button>
+          </Info>
+        </CategoryItems>
+        <CategoryItems>
+          <Img src='https://images.pexels.com/photos/7620697/pexels-photo-7620697.jpeg?auto=compress&cs=tinysrgb&w=600' alt="Electronics"></Img>
+          <Info>
+            <Title>Electronics</Title>
+            <Button onClick={handleCategory}>Shop now</Button>
+          </Info>
+        </CategoryItems>
+        <CategoryItems>
+          <Img src='https://images.pexels.com/photos/8105118/pexels-photo-8105118.jpeg?auto=compress&cs=tinysrgb&w=600' alt="jewellery"></Img>
+          <Info>
+            <Title>Jewellery</Title>
+            <Button onClick={handleCategory}>Shop now</Button>
+          </Info>
+        </CategoryItems>
+        <CategoryItems>
+          <Img src='https://images.pexels.com/photos/3167310/pexels-photo-3167310.jpeg?auto=compress&cs=tinysrgb&w=600' alt="groceries"></Img>
+          <Info>
+            <Title>Groceries</Title>
+            <Button onClick={handleCategory}>Shop now</Button>
+          </Info>
+        </CategoryItems>
+        <CategoryItems>
+          <Img src='https://images.pexels.com/photos/704241/pexels-photo-704241.jpeg?auto=compress&cs=tinysrgb&w=600' alt="sunglasses"></Img>
+          <Info>
+            <Title>sunglasses</Title>
+            <Button onClick={handleCategory}>Shop now</Button>
+          </Info>
+        </CategoryItems>
       </CategoryScrollContainer>
       <ArrowRight  onClick={()=>handleScroll("right")}>
         <FontAwesomeIcon icon={faAngleRight} style={{fontSize:`30px`,color:"white"}} />

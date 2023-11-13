@@ -53,7 +53,7 @@ export const cartSlice = createSlice({
         },
         incrementQty:(state,action)=>{
             const updatedProducts = state.products?.map((item)=>{
-                if (item.id === action.payload) {
+                if (item.id === action.payload.id) {
                     return {...item,quantity:item.quantity+1}
                 }
                 return item;
@@ -67,7 +67,7 @@ export const cartSlice = createSlice({
             var quant;
             const updatedProducts = state.products?.map((item)=>{
                 quant =item.quantity-1;
-                if (item.id === action.payload && item.quantity>0) {
+                if (item.id === action.payload.id && item.quantity>1) {
                     return {...item,quantity:item.quantity-1}
                 }
                 return item;

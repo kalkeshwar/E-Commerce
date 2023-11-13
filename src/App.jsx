@@ -2,12 +2,12 @@ import { useState,useEffect} from 'react'
 import './App.css'
 import {Routes,Route,useNavigate,useLocation,Navigate} from 'react-router-dom'
 import Products from './pages/Products'
-import Home from './pages/Home/Home'
+import Home from './pages/Home'
 import Cart from './pages/Cart'
 import Error404 from './pages/Error404'
 import Login from './pages/Login'
 import Register from './pages/Register'
-import SingleProduct from './components/singleproduct/SingleProduct'
+import SingleProduct from './components/SingleProduct'
 import { Toaster } from 'react-hot-toast'
 import {useSelector} from "react-redux"
 import Categoryitem from './components/Categoryitem'
@@ -18,7 +18,7 @@ import Footer from './components/Footer'
 
 function App() {
   const navigate = useNavigate()
-  const user = /*useSelector((state)=>state.user.currentUser)*/true ;
+  const user = useSelector((state)=>state.user.currentUser) ;
 
   const location = useLocation()
   const {pathname}=location

@@ -6,7 +6,7 @@ import { faTrash} from '@fortawesome/free-solid-svg-icons';
 import { decrementQty, incrementQty, removeFromCart } from '../redux/cartSlice';
 
 const Container = styled.div`
-width:90vh;
+width:90vw;
 min-height:70vh;
 `;
 const Nouser=styled.div``;
@@ -95,7 +95,7 @@ const Price=styled.h3``;
 
 const Cart = () => {
   const {products,totalQty:totalQuantity,totalPrice}=useSelector((state)=>state.cart) //object destructing
-  const user = useSelector((state)=>state.user.currenUser);
+  const user = useSelector((state)=>state.user.currentUser);
   const dispatch=useDispatch();
 
   const handleIncrement=(item)=>{

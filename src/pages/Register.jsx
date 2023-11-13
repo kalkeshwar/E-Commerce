@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const RegistrationContainer = styled.div`
@@ -32,11 +33,16 @@ const SubmitButton = styled.button`
   cursor: pointer;
 `;
 
+const Notuser=styled.div`
+  margin:5px 0;
+`;
+
 const Register = () => {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
     email: '',
+    username:'',
     password: '',
     confirmPassword: '',
     country: '',
@@ -56,6 +62,9 @@ const Register = () => {
     }
     if (formData.lastName.trim() === '') {
       newErrors.lastName = 'Last name is required';
+    }
+    if (formData.username.trim() === '') {
+      newErrors.userName = 'Last name is required';
     }
     if (formData.email.trim() === '') {
       newErrors.email = 'Email is required';
@@ -82,6 +91,17 @@ const Register = () => {
     e.preventDefault();
     if (validateForm()) {
       // Handle form submission logic here
+      try {
+        fetch('https://dummyjson.com/users/add', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData)
+          })
+        .then(res => res.json())
+        .then(console.log);
+      } catch (error) {
+        console.log(error);
+      }
     }
   };
 
@@ -105,6 +125,14 @@ const Register = () => {
           placeholder="Last Name"
         />
         {errors.lastName && <p style={{color:"red"}}>{errors.lastName}</p>}
+        <FormInput
+          type="text"
+          name="username"
+          value={formData.username}
+          onChange={handleChange}
+          placeholder="Username"
+        />
+        {errors.userName && <p style={{color:"red"}}>{errors.userName}</p>}
         <FormInput
           type="email"
           name="email"
@@ -138,6 +166,7 @@ const Register = () => {
         />
         {errors.country && <p style={{color:"red"}}>{errors.country}</p>}
         <SubmitButton type="submit">Register</SubmitButton>
+        <Notuser>Already a user?<Link to="/login">Login</Link></Notuser>
       </RegistrationForm>
     </RegistrationContainer>
   );

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-
+import {login} from "../redux/Apicalls"
+import { useDispatch } from 'react-redux';
 
 const LoginContainer = styled.div`
   background: url('src/assets/image.jpeg') no-repeat center center fixed;
@@ -24,6 +26,10 @@ const FormInput = styled.input`
   margin: 10px 0;
 `;
 
+const Notuser=styled.div`
+margin:5px 0;
+`;
+
 const SubmitButton = styled.button`
   background-color: #007bff;
   color: #fff;
@@ -32,20 +38,26 @@ const SubmitButton = styled.button`
   cursor: pointer;
 `;
 
+
 const Login = () => {
+
   const [formData, setFormData] = useState({
-    email: '',
+    username: '',
     password: '',
   });
+
+  const dispatch = useDispatch();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
+  console.log(formData)
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle login form submission logic here
+      login(dispatch,formData)
   };
 
   return (
@@ -54,7 +66,7 @@ const Login = () => {
         <h2>Login</h2>
         <FormInput
           type="text"
-          name="email"
+          name="username"
           value={formData.email}
           onChange={handleChange}
           placeholder="Email"
@@ -67,6 +79,7 @@ const Login = () => {
           placeholder="Password"
         />
         <SubmitButton type="submit">Login</SubmitButton>
+        <Notuser>if you are not a user?<Link to="/register">Register</Link></Notuser>
       </LoginForm>
     </LoginContainer>
   );

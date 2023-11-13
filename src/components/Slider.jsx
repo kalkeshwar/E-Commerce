@@ -6,6 +6,7 @@ import { slideData } from '../data';
 
 const Container=styled.div`
     width:100vw;
+    position:relative;
     overflow:hidden;
 `
 const Wrapper=styled.div`
@@ -29,18 +30,18 @@ const Arrow=styled.div`
     width:100vw;
     display:flex;
     justify-content:space-between;
-    position:fixed;
-    top:25%;
+    position:absolute;
+    top:40%;
     padding:2rem;
     z-index:2;
 `
 const ImageBox=styled.div`
-width:350px;
-height:100%;
+    width:350px;
+    height:100%;
 `
 const Image=styled.img`
-object-fit:cover;
-height:100%
+    object-fit:cover;
+    height:100%
 `
 const Info = styled.div`
     display:flex;
@@ -55,11 +56,12 @@ const Content=styled.div`
     margin:12px auto;
 `
 const Button=styled.div`
-background-color:white;
-color:black;
-padding:1rem;
-width:8rem;
-margin-top:1rem;
+    background-color:white;
+    color:black;
+    padding:1rem;
+    width:8rem;
+    margin-top:1rem;
+    cursor:pointer;
 `
 
 const Slider = () => {
@@ -72,14 +74,14 @@ const Slider = () => {
             setSlideNumber(slidenumber>0 ? slidenumber-1:2)
         }
         else{
-            setSlideNumber(slidenumber<3 ? slidenumber+1:0)
+            setSlideNumber(slidenumber<2 ? slidenumber+1:0)
         }
     }
   useEffect(()=>{
     if(isAutoSliding){
         const interval =setInterval(()=>{
             setSlideNumber((prev)=>(prev===2?0:prev+1))
-        },2000)
+        },3000)
 
         return ()=>{
             clearInterval(interval)

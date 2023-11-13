@@ -34,8 +34,8 @@ const Input = styled.input`
     padding: 1px 3px;
 `
 const Button = styled.button`
-    background-color:tale;
-    color:white;
+    background-color:lightblue;
+    color:blue;
     width:40px;
     height:40px;
     padding:2px 1px;

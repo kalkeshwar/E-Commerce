@@ -29,7 +29,7 @@ const Title= styled.div``
 
 const Product = ({product}) => {
     const {id,title,price,category,description,image,rating}=product
-    console.log(product)
+    // console.log(product)
 
   return (
     <Link to={`/products/${id}`} style={{textDecoration:"none"}}>

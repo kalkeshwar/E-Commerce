@@ -22,12 +22,16 @@ const NavbarContainer =styled.div`
 const Title = styled.div`
   font-weight:1px;
   font-size:30px;
+  cursor:pointer;
 `;
 const Middle = styled.div`
   display:flex;
   position:relative;
   height:40px;
 `;
+const Search=styled.input`
+  padding:5px;
+`
 const Right = styled.div`
   display: flex;
   align-items: center;
@@ -36,23 +40,27 @@ const Right = styled.div`
   `
 const CartIconDiv= styled.div`
   margin:0px 20px;
+  cursor:pointer;
 `
 const Signindiv=styled.div`
-display:flex;
-column-gap:5px;
-font-weight:1px;
-  font-size:20px;`
+  display:flex;
+  column-gap:5px;
+  font-weight:1px;
+  font-size:20px;
+  cursor:pointer;
+  `
 
 const Navbar = () => {
 
   const navigate=useNavigate();
   const cartQnty=useSelector((state)=>state.cart.totalQty)
+  const user = useSelector((state)=>state.user.currentUser)
 
   return (
     <NavbarContainer>
       <Title>shop</Title>
       <Middle>
-        <input type="text" name="s" id="" placeholder='Enter name' />
+        <Search type="text" name="search" id="" placeholder='Enter name' />
         <SearchIcon style={{position:"absolute" , right:"2px", top:`20%`}}/>
       </Middle>
       <Right>
@@ -65,7 +73,7 @@ const Navbar = () => {
         </CartIconDiv>
         <Signindiv onClick={()=>navigate("/login")}>
           <FontAwesomeIcon icon={faUser} style={{marginTop:`5px`}}/>
-          Sign In
+          {!user&& "Sign In"}
         </Signindiv>
       </Right>
     </NavbarContainer>
