@@ -1,6 +1,5 @@
 import React ,{useContext, useEffect, useState} from 'react'
 import {productsdata} from '../data'
-// import { Context } from '../../context/CartContext'
 import { Link } from 'react-router-dom'
 import  toast  from 'react-hot-toast'
 import { useSelector,useDispatch } from 'react-redux'
@@ -48,7 +47,7 @@ const Products = () => {
             try{
                 setLoading(true);
                 setError(false)
-                const res=await fetch('https://fakestoreapi.com/products',{signal:controller.signal})
+                const res=await fetch("https://fakestoreapi.com/products",{signal:controller.signal})
                 if (!res.ok) {
                     throw new Error('Request failed');
                   }

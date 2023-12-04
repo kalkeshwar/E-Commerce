@@ -18,7 +18,7 @@ import Footer from './components/Footer'
 
 function App() {
   const navigate = useNavigate()
-  const user = useSelector((state)=>state.user.currentUser) ;
+  const user = /*useSelector((state)=>state.user.currentUser)*/ true;
 
   const location = useLocation()
   const {pathname}=location
@@ -33,7 +33,6 @@ function App() {
           <Route path="/login" element={user ? <Navigate to="/" /> : <Login />} />
           <Route path="/products" element={<Products/>}/>
           <Route path="/cart" element={<Cart/>}/>
-          <Route path="/category" element={<Categoryitem/>}/>
           <Route path="/products/:id" element={<SingleProduct/>}/>
           <Route path="*" element={<Error404/>}/>
         </Routes>

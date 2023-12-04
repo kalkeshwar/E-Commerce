@@ -27,7 +27,8 @@ const CartItem=styled.div`
   padding-left:5px;
   margin:2px;
   // background-color:#a1a1a1db;
-  border:1px solid black;
+  border:1px solid lightgrey;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 10px 0 rgba(0, 0, 0, 0.09);
 `;
 const ImageDiv=styled.div`
 width:200px;
@@ -95,7 +96,7 @@ const Price=styled.h3``;
 
 const Cart = () => {
   const {products,totalQty:totalQuantity,totalPrice}=useSelector((state)=>state.cart) //object destructing
-  const user = useSelector((state)=>state.user.currentUser);
+  const user = /*useSelector((state)=>state.user.currentUser)*/ true;
   const dispatch=useDispatch();
 
   const handleIncrement=(item)=>{

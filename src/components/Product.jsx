@@ -9,11 +9,15 @@ display:flex;
 flex-direction:column;
 margin:5px;
 padding:4px;
-border:1px solid black;
+border:1px solid lightgrey;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 10px 0 rgba(0, 0, 0, 0.09);
 `
 const ImageBox =styled.div`
 width:90%;
 height:250px;
+display:flex;
+justify-content:center;
+align-items:center;
 `
 const Image = styled.img`
 width:100%;
@@ -23,9 +27,24 @@ object-fit:fit;
 const Info =styled.div`
 display:flex;
 flex-direction:column;
+flex-wrap:wrap;
+justify-content:center;
+row-gap:6px;
 color:black;
 `
-const Title= styled.div``
+const Title= styled.div`
+font-size:15px;
+font-weight:bold;
+`
+const Categoryname=styled.div`
+  font-size:15px;
+`
+const Price=styled.div`
+font-size:15px;
+`
+const Rating=styled.div`
+font-size:15px;
+`
 
 const Product = ({product}) => {
     const {id,title,price,category,description,image,rating}=product
@@ -39,9 +58,9 @@ const Product = ({product}) => {
           </ImageBox>
           <Info>
             <Title>{title}</Title>
-            <Title>{category}</Title>
-            <Title>{price}</Title>
-            <Title>{rating.rate}⭐</Title>
+            {/* <Categoryname>{category}</Categoryname> */}
+            <Price>{price}</Price>
+            <Rating>{rating.rate}⭐</Rating>
           </Info>
       </Container>  
     </Link>

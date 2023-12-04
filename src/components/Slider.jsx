@@ -1,4 +1,5 @@
 import React ,{useEffect, useState} from 'react'
+import { Link } from 'react-router-dom';
 import styled from 'styled-components'
 import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
@@ -104,7 +105,7 @@ const Slider = () => {
                             <Content>
                                 <p>{slidedata.description}</p>
                             </Content>
-                            <Button>Shop now</Button>
+                           <Link to="/products" style={{textDecoration:"none",color:"black"}}><Button>Shop now</Button></Link>
                         </Info>
                         <ImageBox>
                             <Image src={slidedata.imageLink}/>

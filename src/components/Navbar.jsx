@@ -1,9 +1,8 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,Link} from 'react-router-dom';
 import SearchIcon from '@mui/icons-material/Search';
 import Badge from '@mui/material/Badge';
 import IconButton from '@mui/material/IconButton';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser,faShoppingCart} from '@fortawesome/free-solid-svg-icons';
@@ -54,11 +53,11 @@ const Navbar = () => {
 
   const navigate=useNavigate();
   const cartQnty=useSelector((state)=>state.cart.totalQty)
-  const user = useSelector((state)=>state.user.currentUser)
+  const user = /*useSelector((state)=>state.user.currentUser)*/ true
 
   return (
     <NavbarContainer>
-      <Title>shop</Title>
+      <Link to='/' style={{textDecoration:"none",color:"black"}}><Title>shop</Title></Link>
       <Middle>
         <Search type="text" name="search" id="" placeholder='Enter name' />
         <SearchIcon style={{position:"absolute" , right:"2px", top:`20%`}}/>
