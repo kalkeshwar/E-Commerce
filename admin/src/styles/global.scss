@@ -10,10 +10,12 @@
     display:flex;
 }
 .menucontainer{
-    width: 150px;
+    width: 250px;
     padding: 5px 20px ;
+    background-color:#d1d2d4;
     border-right: 2px solid rgb(31, 29, 29);
 }
 .contentcontainer{
     padding: 5px 20px;
+    width: 100%;
 }

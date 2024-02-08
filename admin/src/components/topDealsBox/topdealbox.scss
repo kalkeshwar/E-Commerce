@@ -1,0 +1,48 @@
+.topdeals{
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    .list{
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        gap:20px;
+    }
+    .userbox{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .user{
+            display: flex;
+            gap:10px;
+            justify-content: center;
+            align-items: center;
+            img{
+                width:40px;
+                height:40px;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+            .details{
+                display: flex;
+                flex-direction: column;
+                .username{
+                    font-size: 14px;
+                    font-weight: 500;
+                }
+                .email{
+                    font-size:12px;
+                    font-weight: 300;
+                }
+            }
+        }
+        .amount{
+            font-size: 14px;
+            font-weight: 500;
+        }
+        &:hover{
+            cursor: pointer;
+        }
+    }
+}
