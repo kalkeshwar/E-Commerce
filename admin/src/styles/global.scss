@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.main{
+    font-family:"Inter",sans-serif;
+}
+.container{
+    display:flex;
+}
+.menucontainer{
+    width: 150px;
+    padding: 5px 20px ;
+    border-right: 2px solid rgb(31, 29, 29);
+}
+.contentcontainer{
+    padding: 5px 20px;
+}
